@@ -175,8 +175,8 @@ var CustomImportScript = (() => {
       {
         "name": "cards",
         "instances": [
-          "section.discoverflavors .row",
-          "section.discoverflavors"
+          "section.discoverflavors .find-products",
+          "section.discoverflavors .row"
         ]
       }
     ],
@@ -206,8 +206,8 @@ var CustomImportScript = (() => {
           "cards"
         ],
         "defaultContent": [
-          "section.discoverflavors h2",
-          "section.discoverflavors h3"
+          "section.discoverflavors .discover_title",
+          "section.discoverflavors .discover_subtitle"
         ]
       },
       {

@@ -78,10 +78,15 @@ export default function parse(element, { document }) {
     if (!columns.length) columns = Array.from(element.querySelectorAll('.column'));
     if (columns.length) {
       const row = columns.map((col) => {
-        // Prefer an inner text/content wrapper; else the column itself.
-        const inner = col.querySelector('.text__container, .text, .recipe-product-section') || col;
-        const nodes = meaningful(inner);
-        return nodes.length ? nodes : [inner];
+        // Capture ALL meaningful direct children of the column so nothing is
+        // dropped. Narrowing to a single inner wrapper (e.g. .text__container
+        // or .recipe-product-section) discarded siblings — the "Back to
+        // recipes" link (.backtorecipe) in the left column and the
+        // "Share the love" social widget (.socialmedia) in the right column.
+        // Restore lazy-loaded images inside the column before extracting.
+        col.querySelectorAll('img').forEach(unlazy);
+        const nodes = meaningful(col);
+        return nodes.length ? nodes : [col];
       });
       cells.push(row);
     }

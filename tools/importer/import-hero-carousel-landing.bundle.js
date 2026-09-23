@@ -106,10 +106,15 @@ var CustomImportScript = (() => {
       }
       const metaEl = link.querySelector(".recipe-minute_serves");
       if (metaEl) {
-        const spans = Array.from(metaEl.querySelectorAll("span")).map((s) => s.textContent.trim()).filter(Boolean);
-        if (spans.length) {
+        let parts = Array.from(metaEl.querySelectorAll("span")).map((s) => s.textContent.trim()).filter(Boolean);
+        if (!parts.length) {
+          let raw = (metaEl.textContent || "").replace(/\s+/g, " ").trim();
+          raw = raw.replace(/\s*(Serves|Makes)\b/i, " \u2022 $1");
+          if (raw) parts = [raw];
+        }
+        if (parts.length) {
           const meta = document2.createElement("p");
-          meta.textContent = spans.join(" \u2022 ");
+          meta.textContent = parts.join(" \u2022 ");
           contentCell.push(meta);
         }
       }

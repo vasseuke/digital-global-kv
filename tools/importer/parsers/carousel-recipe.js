@@ -68,12 +68,24 @@ export default function parse(element, { document }) {
 
     const metaEl = link.querySelector('.recipe-minute_serves');
     if (metaEl) {
-      const spans = Array.from(metaEl.querySelectorAll('span'))
+      // Prefer the individual <span>s ("5 Minutes", "Serves 1"). Some DOM
+      // variations render the time/serves text without <span> wrappers, so
+      // fall back to the element's own text split on whitespace-collapsed
+      // separators. This guarantees the meta line is never dropped when the
+      // element exists.
+      let parts = Array.from(metaEl.querySelectorAll('span'))
         .map((s) => s.textContent.trim())
         .filter(Boolean);
-      if (spans.length) {
+      if (!parts.length) {
+        let raw = (metaEl.textContent || '').replace(/\s+/g, ' ').trim();
+        // Insert a boundary before "Serves"/"Makes" when the time and serving
+        // values run together (adjacent spans render with no separator).
+        raw = raw.replace(/\s*(Serves|Makes)\b/i, ' • $1');
+        if (raw) parts = [raw];
+      }
+      if (parts.length) {
         const meta = document.createElement('p');
-        meta.textContent = spans.join(' • ');
+        meta.textContent = parts.join(' • ');
         contentCell.push(meta);
       }
     }

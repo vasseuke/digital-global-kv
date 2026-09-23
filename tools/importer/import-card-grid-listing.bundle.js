@@ -85,9 +85,9 @@ var CustomImportScript = (() => {
       if (!columns.length) columns = Array.from(element.querySelectorAll(".column"));
       if (columns.length) {
         const row = columns.map((col) => {
-          const inner = col.querySelector(".text__container, .text, .recipe-product-section") || col;
-          const nodes = meaningful(inner);
-          return nodes.length ? nodes : [inner];
+          col.querySelectorAll("img").forEach(unlazy);
+          const nodes = meaningful(col);
+          return nodes.length ? nodes : [col];
         });
         cells.push(row);
       }
