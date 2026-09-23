@@ -1,0 +1,33 @@
+:root {
+  /* fonts — DunkinSans is proprietary/self-hosted on the source; Baloo 2 is a
+     close rounded-bold approximation for display headings, Poppins for body */
+  --heading-font-family: "Baloo 2", "DunkinSans", system-ui, sans-serif;
+  --body-font-family: "Poppins", system-ui, -apple-system, sans-serif;
+
+  /* brand colors */
+  --background-color: #ffffff;
+  --text-color: #3e342f;
+  --link-color: #c63663;
+  --link-hover-color: #a02850;
+
+  /* brand accents (Dunkin orange + magenta/pink) */
+  --brand-orange: #ef6a00;
+  --brand-pink: #c63663;
+  --brand-grey: #f2f2f2;
+
+  /* section variants */
+  --light-color: #f2f2f2;
+  --dark-color: #c63663;
+
+  /* spacing */
+  --section-padding: 40px;
+  --nav-height: 73px;
+
+  /* heading sizes (desktop) */
+  --heading-size-xxl: 62px;
+  --heading-size-xl: 44px;
+  --heading-size-l: 31px;
+  --heading-size-m: 26px;
+  --heading-size-s: 22px;
+  --heading-size-xs: 20px;
+}

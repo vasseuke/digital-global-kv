@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/blueberry-muffins/",
+  "path": "learn-more/coffee-creamer-recipes/blueberry-muffins",
+  "timestamp": "2026-09-23T09:05:38.166Z",
+  "title": "Recipes with Dunkin’® Creamers",
+  "template": "card-grid-listing",
+  "blocks": [
+    "columns-recipe",
+    "columns-recipe",
+    "cards-recipe"
+  ]
+}

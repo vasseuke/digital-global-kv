@@ -1,46 +1,87 @@
+/*
+ * Hero — light headline + product image variant.
+ * Source: dunkincreamer.com home hero_banner. Full-bleed white band,
+ * orange display headline + pink serif subhead on the left, product
+ * bottles flush to the right edge and bottom-anchored.
+ * Values extracted from source computed styles @1440px.
+ */
+
 .hero-light-withimg {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  padding: 32px 24px;
+  gap: 16px;
+  padding: 24px 0 0;
   box-sizing: border-box;
-}
-
-.hero-light-withimg .hero-light-withimg-content {
-  flex: 1 1 55%;
+  color: var(--text-color);
   text-align: center;
 }
 
-.hero-light-withimg .hero-light-withimg-content h1,
-.hero-light-withimg .hero-light-withimg-content h2 {
-  margin: 0 0 16px;
+.hero-light-withimg .hero-light-withimg-content {
+  padding: 0 24px;
+}
+
+.hero-light-withimg .hero-light-withimg-content h1 {
+  margin: 0 0 8px;
+  color: var(--brand-orange);
+  line-height: 1;
+}
+
+.hero-light-withimg .hero-light-withimg-content h3 {
+  margin: 0;
+  color: var(--brand-pink);
+  font-weight: 700;
+  line-height: 1.33;
 }
 
 .hero-light-withimg .hero-light-withimg-media {
-  flex: 1 1 45%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 16px;
 }
 
-.hero-light-withimg .hero-light-withimg-media img,
-.hero-light-withimg .hero-light-withimg-media picture {
+.hero-light-withimg .hero-light-withimg-media picture,
+.hero-light-withimg .hero-light-withimg-media img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 @media (width >= 900px) {
+  /* full-bleed: break out of the 1200px section container to match source */
+  .hero-light-withimg-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
   .hero-light-withimg {
     flex-direction: row;
-    gap: 48px;
-    padding: 40px;
-    min-height: 420px;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 35px 0 0;
+    text-align: left;
   }
 
   .hero-light-withimg .hero-light-withimg-content {
-    text-align: left;
+    flex: 1 1 54%;
+    padding: 0 0 0 109px;
+    align-self: flex-start;
+  }
+
+  .hero-light-withimg .hero-light-withimg-content h1 {
+    font-size: 76px;
+  }
+
+  .hero-light-withimg .hero-light-withimg-content h3 {
+    max-width: 420px;
+    font-size: 31px;
+  }
+
+  .hero-light-withimg .hero-light-withimg-media {
+    flex: 1 1 46%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-bottom: 47px;
   }
 }

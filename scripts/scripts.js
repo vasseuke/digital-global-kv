@@ -143,6 +143,39 @@ function decorateButtons(main) {
 }
 
 /**
+ * Applies authored Section Metadata to its parent section.
+ * The vendored aem.js decorateSections does not process the `section-metadata`
+ * block, so we read its key/value rows here: `style` values become section
+ * classes; other keys become data attributes. The metadata block is removed.
+ * @param {Element} main The main container element
+ */
+function processSectionMetadata(main) {
+  main.querySelectorAll(':scope > .section .section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    [...meta.children].forEach((row) => {
+      const cells = [...row.children];
+      if (cells.length < 2) return;
+      const key = cells[0].textContent.trim().toLowerCase();
+      const value = cells[1].textContent.trim();
+      if (!key || !value) return;
+      if (key === 'style') {
+        value.split(',').forEach((s) => {
+          const token = s.trim().replace(/\s+/g, '-').toLowerCase();
+          if (token) section.classList.add(token);
+        });
+      } else {
+        section.dataset[key.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = value;
+      }
+    });
+    const wrapper = meta.closest('.section-metadata-container') || meta.parentElement;
+    meta.remove();
+    if (wrapper && wrapper.classList.contains('section-metadata-container') && !wrapper.children.length) {
+      wrapper.remove();
+    }
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -151,6 +184,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  processSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
 }

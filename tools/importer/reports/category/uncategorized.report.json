@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.dunkincreamer.com/category/uncategorized/",
+  "path": "category/uncategorized",
+  "timestamp": "2026-09-23T09:05:20.158Z",
+  "title": "Uncategorized Archives - DunkinCreamer",
+  "template": "archive-listing",
+  "blocks": [
+    "hero-orange-cta"
+  ]
+}

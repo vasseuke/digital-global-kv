@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/latte-maximus/",
+  "path": "learn-more/coffee-creamer-recipes/latte-maximus",
+  "timestamp": "2026-09-23T09:06:05.893Z",
+  "title": "Latte Maximus Recipe with Dunkin’® Creamer",
+  "template": "recipe-detail",
+  "blocks": [
+    "hero-minimal-dark",
+    "columns-recipe"
+  ]
+}

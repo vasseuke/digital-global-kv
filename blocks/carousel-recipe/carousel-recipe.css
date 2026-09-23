@@ -1,11 +1,19 @@
+/*
+ * Carousel — recipe card variant.
+ * Values extracted from source computed styles (dunkincreamer.com).
+ * The surrounding pink band is provided by styles.css (.section.pink);
+ * this file styles only the white recipe cards + slider + paging dots.
+ */
+
 .carousel-recipe {
   position: relative;
 }
 
+/* --- slides track (horizontal scroll-snap slider) --- */
 .carousel-recipe .carousel-recipe-slides {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 4px 0 8px; /* room for card shadow */
   display: flex;
   gap: 24px;
   scroll-behavior: smooth;
@@ -18,52 +26,100 @@
 }
 
 .carousel-recipe .carousel-recipe-slide {
-  flex: 0 0 85%;
+  flex: 0 0 82%;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
+
+  /* white recipe card */
+  background-color: #fff;
+  box-shadow: 0 12px 30px rgb(0 0 0 / 16%); /* source: rgba(0,0,0,0.16) */
+  overflow: hidden; /* source card corners are square (border-radius: 0) */
 }
 
+/* --- photo on top --- */
 .carousel-recipe .carousel-recipe-slide-image {
   line-height: 0;
 }
 
-.carousel-recipe .carousel-recipe-slide-image img,
-.carousel-recipe .carousel-recipe-slide-image picture {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.carousel-recipe .carousel-recipe-slide-image picture,
+.carousel-recipe .carousel-recipe-slide-image img {
   display: block;
+  width: 100%;
+  aspect-ratio: 715 / 412; /* source figure 715x412 */
+  object-fit: cover;
 }
 
+/* --- card body (title + meta/link) --- */
 .carousel-recipe .carousel-recipe-slide-body {
-  padding: 16px;
+  padding: 24px 32px 40px; /* source figcaption: 0 32px 40px + top spacing */
   text-align: center;
+  flex: 1;
 }
 
+/* recipe title — pink, uppercase, centered */
+.carousel-recipe .carousel-recipe-slide-body h3 {
+  margin: 0 0 12.8px; /* source .recipe-title margin */
+  color: var(--link-color); /* #c63663 — source rgb(198,54,99) */
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 800;
+  text-transform: uppercase; /* source .recipe-title */
+}
+
+/* meta / view-recipe line — dark, centered, small */
+.carousel-recipe .carousel-recipe-slide-body p {
+  margin: 0;
+  color: var(--text-color); /* #3e342f — source meta rgb(62,52,47) */
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* higher specificity to beat styles.css `.section.pink a:any-link { color:#fff }`
+   — these links sit on the white card, so they must stay brand pink */
+main .carousel-recipe .carousel-recipe-slide .carousel-recipe-slide-body a,
+main .carousel-recipe .carousel-recipe-slide .carousel-recipe-slide-body a:any-link {
+  color: var(--link-color);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+main .carousel-recipe .carousel-recipe-slide .carousel-recipe-slide-body a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* --- paging dots (on the pink band) --- */
 .carousel-recipe .carousel-recipe-indicators {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  padding: 16px;
+  gap: 10px;
+  padding: 16px 0 0; /* source .custom-nav padding */
+  margin: 0;
 }
 
 .carousel-recipe .carousel-recipe-indicator button {
-  width: 12px;
+  width: 12px; /* source dot ~11.5px */
   height: 12px;
   padding: 0;
   margin: 0;
+  border: 0;
   border-radius: 50%;
-  background-color: #dadada;
+  background-color: rgb(255 255 255 / 50%);
+  cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .carousel-recipe .carousel-recipe-indicator button:disabled,
 .carousel-recipe .carousel-recipe-indicator button:hover {
-  background-color: var(--text-color);
+  background-color: #fff; /* source dots are white on the pink band */
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
+  /* three cards across, no horizontal scroll needed */
   .carousel-recipe .carousel-recipe-slide {
     flex-basis: calc((100% - 48px) / 3);
   }

@@ -1,33 +1,111 @@
+/*
+ * columns-promo — Dunkin loyalty / QR promo panels.
+ * Values extracted from source section.column-grid > .dunkin_home computed styles.
+ * Decorated DOM:
+ *   .columns-promo.columns-promo-2-cols > div (row)
+ *     > .columns-promo-panel.columns-promo-img-col  (lifestyle image)
+ *     > .columns-promo-panel                        (QR image, CTA link, promo text)
+ * Sits inside a section.grey (background + vertical padding handled by styles.css).
+ */
+
+/* Row — mobile-first: stacked, centered */
 .columns-promo > div {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px 0;
 }
 
 .columns-promo .columns-promo-panel {
-  flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 24px;
+  align-items: center;
+  gap: 16px;
   box-sizing: border-box;
+  text-align: center;
 }
 
-.columns-promo .columns-promo-panel img,
-.columns-promo .columns-promo-panel picture {
+/* Images render as blocks, no lazy-load layout jump */
+.columns-promo .columns-promo-panel picture,
+.columns-promo .columns-promo-panel img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
-.columns-promo .columns-promo-img-col {
+/* Lifestyle image (left / top) — source 453x300 */
+.columns-promo .columns-promo-img-col img {
+  width: 453px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* QR image sits inside its own <p>; source 231px wide */
+.columns-promo .columns-promo-panel p:has(picture) {
+  margin: 0;
+}
+
+.columns-promo .columns-promo-panel picture img {
+  width: 231px;
+}
+
+/* Promo paragraph — source 28px, brand display font, brand text color, centered */
+.columns-promo .columns-promo-panel p {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* CTA link — source renders a pink pill button (not auto-decorated to .button) */
+.columns-promo .columns-promo-panel p:has(> a) {
+  margin: 0;
+}
+
+.columns-promo .columns-promo-panel a:any-link {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  padding: 0.6em 1.4em;
+  border-radius: 40px;
+  background-color: var(--brand-pink);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
+.columns-promo .columns-promo-panel a:any-link:hover,
+.columns-promo .columns-promo-panel a:any-link:focus-visible {
+  background-color: var(--link-hover-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Desktop — side-by-side panels, source: flex row, centered, spread */
 @media (width >= 900px) {
   .columns-promo > div {
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
+    justify-content: space-around;
+    gap: 48px;
+    padding: 40px 0;
+  }
+
+  .columns-promo .columns-promo-panel {
+    flex: 0 1 auto;
+  }
+
+  .columns-promo .columns-promo-panel p {
+    font-size: 28px;
   }
 }

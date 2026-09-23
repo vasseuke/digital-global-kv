@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/easy-tres-leches-cake/",
+  "path": "learn-more/coffee-creamer-recipes/easy-tres-leches-cake",
+  "timestamp": "2026-09-23T09:05:57.380Z",
+  "title": "Easy Tres Leches Cake Recipe with Dunkin’® Creamers",
+  "template": "recipe-detail",
+  "blocks": [
+    "hero-minimal-dark",
+    "columns-recipe"
+  ]
+}

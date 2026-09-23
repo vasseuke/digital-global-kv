@@ -1,31 +1,78 @@
+/*
+ * Hero — orange CTA band.
+ * Full-bleed brand-orange band: centered white uppercase heading, a pink pill
+ * CTA button, and a white supporting link line.
+ * Values extracted from source (section.zipcodefinder on dunkincreamer.com).
+ * Orange band is self-contained here so the block renders correctly whether or
+ * not the section carries the `orange` style class.
+ */
+
 .hero-orange-cta {
-  padding: 48px 24px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 40px 20px;
+  background-color: var(--brand-orange);
+  color: #fff;
   text-align: center;
 }
 
 .hero-orange-cta .hero-orange-cta-content {
   max-width: 800px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
 }
 
-.hero-orange-cta .hero-orange-cta-content h1,
-.hero-orange-cta .hero-orange-cta-content h2 {
+.hero-orange-cta h1,
+.hero-orange-cta h2 {
   margin: 0;
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 36px;
+  text-transform: uppercase;
 }
 
-.hero-orange-cta .hero-orange-cta-button {
-  display: inline-block;
-  padding: 12px 32px;
-  border-radius: 999px;
+.hero-orange-cta p {
+  margin: 22px 0;
+  color: #fff;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.hero-orange-cta p:last-child {
+  margin-bottom: 0;
+}
+
+.hero-orange-cta p a:any-link {
+  color: #fff;
+}
+
+.hero-orange-cta p:last-child a:any-link {
+  text-decoration: underline;
+}
+
+/* pink pill CTA */
+.hero-orange-cta .hero-orange-cta-button:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0 40px;
+  border: none;
+  border-radius: 40px;
+  background-color: var(--brand-pink);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
-@media (width >= 900px) {
-  .hero-orange-cta {
-    padding: 64px 40px;
-  }
+.hero-orange-cta .hero-orange-cta-button:hover,
+.hero-orange-cta .hero-orange-cta-button:focus-visible {
+  background-color: var(--link-hover-color);
+  color: #fff;
+  text-decoration: none;
 }
