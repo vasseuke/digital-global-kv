@@ -14,6 +14,11 @@
     "structure": "a single row whose cells become side-by-side columns of text and/or images"
   },
   "usage": "Multi-column layout of text and image content.",
+  "usageTracking": {
+    "pagesUsing": ["/contact-us/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-23T00:00:00.000Z"
+  },
   "options": [],
   "memberVariantIds": []
 }

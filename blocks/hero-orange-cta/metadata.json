@@ -1,0 +1,19 @@
+{
+  "variantName": "hero-orange-cta",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + CTA"
+  },
+  "contentPattern": {
+    "structure": "a heading, a primary CTA button, and a supporting link line on a solid color band"
+  },
+  "usage": "Full-bleed brand-orange CTA banner (e.g. where-to-buy header) with heading and pill button.",
+  "options": [],
+  "memberVariantIds": []
+}

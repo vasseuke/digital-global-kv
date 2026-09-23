@@ -1,0 +1,19 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "expandable Q&A rows"
+  },
+  "contentPattern": {
+    "structure": "one row per FAQ item; first cell is the question (summary), second cell is the answer body"
+  },
+  "usage": "FAQ accordion: expand/collapse question-and-answer rows grouped under category headings.",
+  "options": [],
+  "memberVariantIds": []
+}

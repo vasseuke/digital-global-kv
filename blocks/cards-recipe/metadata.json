@@ -1,0 +1,19 @@
+{
+  "variantName": "cards-recipe",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "large",
+    "structure": "recipe cards"
+  },
+  "contentPattern": {
+    "structure": "one row per recipe; each card has a clickable photo, a title, and timing/serves metadata"
+  },
+  "usage": "Recipe listing grid: photo cards with title and time/serves meta.",
+  "options": [],
+  "memberVariantIds": []
+}

@@ -1,0 +1,19 @@
+{
+  "variantName": "columns-recipe",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "large",
+    "structure": "two columns"
+  },
+  "contentPattern": {
+    "structure": "a single row whose cells become side-by-side columns: image/content for a featured promo, or ingredients/instructions beside a product/share sidebar"
+  },
+  "usage": "Recipe two-column layout: featured recipe promo and recipe body (ingredients/instructions + sidebar).",
+  "options": [],
+  "memberVariantIds": []
+}

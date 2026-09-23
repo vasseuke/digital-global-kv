@@ -1,0 +1,30 @@
+.columns-recipe > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-recipe .columns-recipe-col {
+  flex: 1 1 0;
+}
+
+.columns-recipe .columns-recipe-col img,
+.columns-recipe .columns-recipe-col picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.columns-recipe .columns-recipe-img-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (width >= 900px) {
+  .columns-recipe > div {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+}

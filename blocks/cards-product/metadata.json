@@ -1,0 +1,19 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "large",
+    "structure": "product cards"
+  },
+  "contentPattern": {
+    "structure": "one row per product; each card has a product image, size label, product name, and a Shop Now CTA"
+  },
+  "usage": "Product discovery grid: creamer bottles with size, name, and Shop Now buttons.",
+  "options": [],
+  "memberVariantIds": []
+}

@@ -95,7 +95,58 @@
       ],
       "coverageGaps": [],
       "description": "Single article layout with hero, body text, inline image, and a form/subscribe section",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "form",
+          "instances": [
+            "form#commentform",
+            "div.comments-wrapper form"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "bp1",
+          "name": "article-body",
+          "selector": [
+            "div.post-inner .entry-content",
+            "div.post-inner"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "div.post-inner .entry-content p"
+          ]
+        },
+        {
+          "id": "bp2",
+          "name": "comments",
+          "selector": [
+            "div.comments-wrapper"
+          ],
+          "style": null,
+          "blocks": [
+            "form"
+          ],
+          "defaultContent": [
+            "div.comments-wrapper h2",
+            "div.comments-wrapper .comment"
+          ]
+        },
+        {
+          "id": "bp3",
+          "name": "zipcodefinder",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": "orange",
+          "blocks": [],
+          "defaultContent": [
+            "section.zipcodefinder h1",
+            "section.zipcodefinder a"
+          ]
+        }
+      ]
     },
     {
       "name": "archive-listing",
@@ -105,7 +156,28 @@
       ],
       "coverageGaps": [],
       "description": "Archive/listing layout with a hero header and a stacked list of text entries",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero-orange-cta",
+          "instances": [
+            "section.zipcodefinder"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "al1",
+          "name": "zipcodefinder-hero",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": "orange",
+          "blocks": [
+            "hero-orange-cta"
+          ],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "product-detail",
@@ -114,7 +186,45 @@
       ],
       "coverageGaps": [],
       "description": "Product detail layout with hero, product image, and descriptive text blocks",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "cards-product",
+          "instances": [
+            "section.discoverflavors .row",
+            "section.discoverflavors"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "pd1",
+          "name": "discoverflavors",
+          "selector": [
+            "section.discoverflavors"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": [
+            "section.discoverflavors h1",
+            "section.discoverflavors h2"
+          ]
+        },
+        {
+          "id": "pd2",
+          "name": "zipcodefinder",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": "orange",
+          "blocks": [],
+          "defaultContent": [
+            "section.zipcodefinder h1",
+            "section.zipcodefinder a"
+          ]
+        }
+      ]
     },
     {
       "name": "contact-form",
@@ -123,7 +233,85 @@
       ],
       "coverageGaps": [],
       "description": "Contact layout consisting of an intro text block and a form",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "form",
+          "instances": [
+            "section.formcontainer-section form",
+            "form#contactForm",
+            "section.formcontainer-section"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            "section.column-grid"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "cf1",
+          "name": "formcontainer",
+          "selector": [
+            "section.formcontainer-section"
+          ],
+          "style": null,
+          "blocks": [
+            "form"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "cf2",
+          "name": "column-grid-1",
+          "selector": [
+            "section.column-grid:nth-of-type(1)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "cf3",
+          "name": "column-grid-2",
+          "selector": [
+            "section.column-grid:nth-of-type(2)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "cf4",
+          "name": "column-grid-3",
+          "selector": [
+            "section.column-grid:nth-of-type(3)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "cf5",
+          "name": "zipcodefinder",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": "orange",
+          "blocks": [],
+          "defaultContent": [
+            "section.zipcodefinder h1",
+            "section.zipcodefinder a"
+          ]
+        }
+      ]
     },
     {
       "name": "card-grid-listing",
@@ -135,7 +323,76 @@
       ],
       "coverageGaps": [],
       "description": "Listing layout with hero and a grid of cards over background sections",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "columns-recipe",
+          "instances": [
+            "section.recipefeatured-section .row",
+            "section.recipefeatured-section"
+          ]
+        },
+        {
+          "name": "cards-recipe",
+          "instances": [
+            "section.recipegrid-section .row",
+            "section.recipegrid-section"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "cg1",
+          "name": "recipefeatured",
+          "selector": [
+            "section.recipefeatured-section"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-recipe"
+          ],
+          "defaultContent": [
+            "section.recipefeatured-section h1",
+            "section.recipefeatured-section h2"
+          ]
+        },
+        {
+          "id": "cg2",
+          "name": "socialmedia",
+          "selector": [
+            "div.socialmedia"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "div.socialmedia"
+          ]
+        },
+        {
+          "id": "cg3",
+          "name": "recipegrid",
+          "selector": [
+            "section.recipegrid-section"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-recipe"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "cg4",
+          "name": "zipcodefinder",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": "orange",
+          "blocks": [],
+          "defaultContent": [
+            "section.zipcodefinder h1",
+            "section.zipcodefinder a"
+          ]
+        }
+      ]
     },
     {
       "name": "recipe-detail",
@@ -147,7 +404,60 @@
       ],
       "coverageGaps": [],
       "description": "Detail layout with hero, card sections, and image-and-text content blocks",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero-minimal-dark",
+          "instances": [
+            "section.recipeteaser-section"
+          ]
+        },
+        {
+          "name": "columns-recipe",
+          "instances": [
+            "section.productused-section .row",
+            "section.productused-section"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rd1",
+          "name": "recipeteaser",
+          "selector": [
+            "section.recipeteaser-section"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-minimal-dark"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rd2",
+          "name": "productused",
+          "selector": [
+            "section.productused-section"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-recipe"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rd3",
+          "name": "zipcodefinder",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": "orange",
+          "blocks": [],
+          "defaultContent": [
+            "section.zipcodefinder h1",
+            "section.zipcodefinder a"
+          ]
+        }
+      ]
     },
     {
       "name": "faq",
@@ -156,7 +466,67 @@
       ],
       "coverageGaps": [],
       "description": "Simple content layout with alternating image and text blocks",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "accordion-faq",
+          "instances": [
+            "section.expander",
+            "main.page-main section.expander"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            "section.discoverflavors .row",
+            "section.discoverflavors"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "fq1",
+          "name": "faq-content",
+          "selector": [
+            "main.page-main"
+          ],
+          "style": null,
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            "main.page-main h1",
+            "main.page-main h2"
+          ]
+        },
+        {
+          "id": "fq2",
+          "name": "discoverflavors",
+          "selector": [
+            "section.discoverflavors"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": [
+            "section.discoverflavors h2",
+            "section.discoverflavors h3"
+          ]
+        },
+        {
+          "id": "fq3",
+          "name": "zipcodefinder",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": "orange",
+          "blocks": [],
+          "defaultContent": [
+            "section.zipcodefinder h1",
+            "section.zipcodefinder a"
+          ]
+        }
+      ]
     },
     {
       "name": "article-text",
@@ -165,7 +535,59 @@
       ],
       "coverageGaps": [],
       "description": "Text-forward article layout with image and body text sections",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "cards",
+          "instances": [
+            "section.discoverflavors .row",
+            "section.discoverflavors"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "at1",
+          "name": "article-body",
+          "selector": [
+            "main.page-main.prasspage",
+            "main.page-main"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "main.page-main h1",
+            "main.page-main a"
+          ]
+        },
+        {
+          "id": "at2",
+          "name": "discoverflavors",
+          "selector": [
+            "section.discoverflavors"
+          ],
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            "section.discoverflavors h2",
+            "section.discoverflavors h3"
+          ]
+        },
+        {
+          "id": "at3",
+          "name": "zipcodefinder",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": "orange",
+          "blocks": [],
+          "defaultContent": [
+            "section.zipcodefinder h1",
+            "section.zipcodefinder a"
+          ]
+        }
+      ]
     }
   ],
   "metadata": {

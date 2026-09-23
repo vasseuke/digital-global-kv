@@ -1,0 +1,31 @@
+.hero-orange-cta {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.hero-orange-cta .hero-orange-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-orange-cta .hero-orange-cta-content h1,
+.hero-orange-cta .hero-orange-cta-content h2 {
+  margin: 0;
+}
+
+.hero-orange-cta .hero-orange-cta-button {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .hero-orange-cta {
+    padding: 64px 40px;
+  }
+}

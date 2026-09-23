@@ -15,8 +15,8 @@
   },
   "usage": "Contact / get-in-touch form with intro copy, an age-confirmation checkbox, and submit control.",
   "usageTracking": {
-    "pagesUsing": ["/2020/02/28/hello-world/index"],
-    "reuseCount": 1,
+    "pagesUsing": ["/2020/02/28/hello-world/index", "/contact-us/index"],
+    "reuseCount": 2,
     "lastUsed": "2026-09-23T00:00:00.000Z"
   },
   "options": [],
