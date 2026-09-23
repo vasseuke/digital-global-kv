@@ -1,4 +1,4 @@
-import { fetchPlaceholders, createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture } from '../../scripts/aem.js';
 
 /*
  * Carousel — recipe card variant.
@@ -23,10 +23,9 @@ function showSlide(block, slideIndex = 0) {
   });
 }
 
-export default async function decorate(block) {
-  const placeholders = await fetchPlaceholders();
+export default function decorate(block) {
   block.setAttribute('role', 'region');
-  block.setAttribute('aria-roledescription', placeholders.carouselLabel || 'Carousel');
+  block.setAttribute('aria-roledescription', 'Carousel');
 
   const rows = [...block.children];
   const slidesWrapper = document.createElement('ul');
@@ -56,11 +55,11 @@ export default async function decorate(block) {
   if (slideCount > 1) {
     const nav = document.createElement('nav');
     nav.className = 'carousel-recipe-indicators';
-    nav.setAttribute('aria-label', placeholders.carouselSlideControls || 'Carousel Slide Controls');
+    nav.setAttribute('aria-label', 'Carousel Slide Controls');
     slidesWrapper.querySelectorAll('.carousel-recipe-slide').forEach((_, idx) => {
       const li = document.createElement('span');
       li.className = 'carousel-recipe-indicator';
-      li.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1}"></button>`;
+      li.innerHTML = `<button type="button" aria-label="Show Slide ${idx + 1}"></button>`;
       li.querySelector('button').addEventListener('click', () => showSlide(block, idx));
       nav.append(li);
     });
