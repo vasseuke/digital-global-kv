@@ -14,6 +14,13 @@
     "structure": "a background image plus a centered content card with icon, heading, meta line, and description"
   },
   "usage": "Recipe/detail page hero: title card overlaid on a full-bleed food photograph.",
+  "usageTracking": {
+    "pagesUsing": [
+      "/learn-more/coffee-creamer-recipes/coconut-cream-pie-blender/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-23T00:00:00.000Z"
+  },
   "options": [],
   "memberVariantIds": ["v_54acc159a880"]
 }
