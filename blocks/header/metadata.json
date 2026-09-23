@@ -1,0 +1,19 @@
+{
+  "variantName": "header",
+  "baseBlock": "header",
+  "canonicalModel": "configuration",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "navigation"
+  },
+  "contentPattern": {
+    "structure": "a nav fragment reference; the block loads and decorates site navigation (brand, sections, tools)"
+  },
+  "usage": "Site header/navigation loaded from a nav fragment.",
+  "options": [],
+  "memberVariantIds": []
+}

@@ -1,0 +1,70 @@
+.carousel-recipe {
+  position: relative;
+}
+
+.carousel-recipe .carousel-recipe-slides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+}
+
+.carousel-recipe .carousel-recipe-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-recipe .carousel-recipe-slide {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-recipe .carousel-recipe-slide-image {
+  line-height: 0;
+}
+
+.carousel-recipe .carousel-recipe-slide-image img,
+.carousel-recipe .carousel-recipe-slide-image picture {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-recipe .carousel-recipe-slide-body {
+  padding: 16px;
+  text-align: center;
+}
+
+.carousel-recipe .carousel-recipe-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.carousel-recipe .carousel-recipe-indicator button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background-color: #dadada;
+  transition: background-color 0.2s;
+}
+
+.carousel-recipe .carousel-recipe-indicator button:disabled,
+.carousel-recipe .carousel-recipe-indicator button:hover {
+  background-color: var(--text-color);
+}
+
+@media (width >= 600px) {
+  .carousel-recipe .carousel-recipe-slide {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+}

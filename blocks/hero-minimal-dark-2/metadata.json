@@ -1,0 +1,19 @@
+{
+  "variantName": "hero-minimal-dark-2",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "text + image"
+  },
+  "contentPattern": {
+    "structure": "a small icon/avatar cell beside a content cell with a heading and supporting text"
+  },
+  "usage": "Compact intro hero: avatar/icon next to author or comment text.",
+  "options": [],
+  "memberVariantIds": ["v_2d0ed4f8912c"]
+}

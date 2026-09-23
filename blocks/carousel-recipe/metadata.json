@@ -1,0 +1,19 @@
+{
+  "variantName": "carousel-recipe",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "medium",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "recipe cards"
+  },
+  "contentPattern": {
+    "structure": "one row per recipe slide; each slide has an image cell (recipe photo) and a body cell with title and time/serves metadata"
+  },
+  "usage": "Rotating recipe-card slider with paging dots, shown on a colored section band.",
+  "options": [],
+  "memberVariantIds": []
+}

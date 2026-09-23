@@ -1,0 +1,19 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "large",
+    "structure": "two promo panels"
+  },
+  "contentPattern": {
+    "structure": "a single row whose cells become side-by-side promotional panels, each with heading, text, image, and CTA"
+  },
+  "usage": "Two-panel promo layout (e.g. loyalty/QR panel beside a seasonal product promo) on a colored section band.",
+  "options": [],
+  "memberVariantIds": []
+}

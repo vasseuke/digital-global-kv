@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "digital-global-kv": {
+      "previewOrg": "vasseuke",
+      "previewSite": "digital-global-kv",
+      "contentHostUrl": "https://content.da.live/vasseuke/digital-global-kv/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

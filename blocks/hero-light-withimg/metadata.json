@@ -1,0 +1,19 @@
+{
+  "variantName": "hero-light-withimg",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + images"
+  },
+  "contentPattern": {
+    "structure": "a content cell with a large display heading and supporting paragraph alongside a cell with prominent product images"
+  },
+  "usage": "Homepage hero: light background, bold headline and copy beside creamer product imagery.",
+  "options": [],
+  "memberVariantIds": []
+}

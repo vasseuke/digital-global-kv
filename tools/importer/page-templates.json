@@ -1,0 +1,174 @@
+{
+  "templates": [
+    {
+      "name": "hero-carousel-landing",
+      "urls": [
+        "https://www.dunkincreamer.com/",
+        "https://www.dunkincreamer.com/coffee-creamer/extra-extra-creamer/",
+        "https://www.dunkincreamer.com/coffee-creamer/pumpkin-munchkin/",
+        "https://www.dunkincreamer.com/cold-foam-creamer/extra-extra-cold-foam-creamer/",
+        "https://www.dunkincreamer.com/learn-more/about-dunkins/"
+      ],
+      "coverageGaps": [],
+      "description": "Landing/product layout: full-width hero banner followed by a carousel and alternating image-and-text feature sections",
+      "blocks": [
+        {
+          "name": "hero-light-withimg",
+          "instances": [
+            "section.home_header .hero_banner",
+            "section.home_header"
+          ]
+        },
+        {
+          "name": "carousel-recipe",
+          "instances": [
+            "section.carousel-section .tns-outer",
+            "section.carousel-section .row"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            "section.column-grid"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "hero",
+          "selector": [
+            "section.home_header.rel",
+            "section.home_header"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-light-withimg"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2",
+          "name": "carousel",
+          "selector": [
+            "section.carousel-section.addpadding",
+            "section.carousel-section"
+          ],
+          "style": "pink",
+          "blocks": [
+            "carousel-recipe"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc3",
+          "name": "column-grid",
+          "selector": [
+            "section.column-grid"
+          ],
+          "style": "grey",
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc4",
+          "name": "zipcodefinder",
+          "selector": [
+            "section.zipcodefinder"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "section.zipcodefinder h1",
+            "section.zipcodefinder h2",
+            "section.zipcodefinder a"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "blog-post",
+      "urls": [
+        "https://www.dunkincreamer.com/2020/02/28/hello-world/"
+      ],
+      "coverageGaps": [],
+      "description": "Single article layout with hero, body text, inline image, and a form/subscribe section",
+      "blocks": []
+    },
+    {
+      "name": "archive-listing",
+      "urls": [
+        "https://www.dunkincreamer.com/author/danoneitccadmin/",
+        "https://www.dunkincreamer.com/category/uncategorized/"
+      ],
+      "coverageGaps": [],
+      "description": "Archive/listing layout with a hero header and a stacked list of text entries",
+      "blocks": []
+    },
+    {
+      "name": "product-detail",
+      "urls": [
+        "https://www.dunkincreamer.com/coffee-creamer/coffee-creamer/"
+      ],
+      "coverageGaps": [],
+      "description": "Product detail layout with hero, product image, and descriptive text blocks",
+      "blocks": []
+    },
+    {
+      "name": "contact-form",
+      "urls": [
+        "https://www.dunkincreamer.com/contact-us/"
+      ],
+      "coverageGaps": [],
+      "description": "Contact layout consisting of an intro text block and a form",
+      "blocks": []
+    },
+    {
+      "name": "card-grid-listing",
+      "urls": [
+        "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/",
+        "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/ball-game-blender/",
+        "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/blueberry-muffins/",
+        "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/english-toffee-coffee/"
+      ],
+      "coverageGaps": [],
+      "description": "Listing layout with hero and a grid of cards over background sections",
+      "blocks": []
+    },
+    {
+      "name": "recipe-detail",
+      "urls": [
+        "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/coconut-cream-pie-blender/",
+        "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/easy-tres-leches-cake/",
+        "https://www.dunkincreamer.com/learn-more/coffee-creamer-recipes/latte-maximus/",
+        "https://www.dunkincreamer.com/where-to-buy-dunkin-creamer/"
+      ],
+      "coverageGaps": [],
+      "description": "Detail layout with hero, card sections, and image-and-text content blocks",
+      "blocks": []
+    },
+    {
+      "name": "faq",
+      "urls": [
+        "https://www.dunkincreamer.com/learn-more/faqs/"
+      ],
+      "coverageGaps": [],
+      "description": "Simple content layout with alternating image and text blocks",
+      "blocks": []
+    },
+    {
+      "name": "article-text",
+      "urls": [
+        "https://www.dunkincreamer.com/learn-more/pressroom/"
+      ],
+      "coverageGaps": [],
+      "description": "Text-forward article layout with image and body text sections",
+      "blocks": []
+    }
+  ],
+  "metadata": {
+    "projectType": "da"
+  }
+}

@@ -1,0 +1,33 @@
+.hero-minimal-dark-2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.hero-minimal-dark-2 .hero-minimal-dark-2-media {
+  flex: 0 0 auto;
+}
+
+.hero-minimal-dark-2 .hero-minimal-dark-2-media img,
+.hero-minimal-dark-2 .hero-minimal-dark-2-media picture {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-minimal-dark-2 .hero-minimal-dark-2-content {
+  flex: 1 1 auto;
+}
+
+.hero-minimal-dark-2 .hero-minimal-dark-2-content p {
+  margin: 6px 0;
+}
+
+@media (width >= 900px) {
+  .hero-minimal-dark-2 {
+    padding: 32px;
+  }
+}

@@ -35,3 +35,16 @@
     padding: 40px 32px;
   }
 }
+
+/* Option: minimal-medium — reduced-height, centered minimal treatment */
+.hero.minimal-medium {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero.minimal-medium h1 {
+  margin: 0 auto;
+}

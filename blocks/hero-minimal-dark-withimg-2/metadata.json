@@ -1,0 +1,21 @@
+{
+  "variantName": "hero-minimal-dark-withimg-2",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + image"
+  },
+  "contentPattern": {
+    "structure": "a content cell with a large headline and supporting copy alongside a product image cell"
+  },
+  "usage": "Homepage brand hero: bold headline and tagline beside creamer product imagery.",
+  "options": [
+    { "class": "minimal-dark-withimg", "label": "Minimal Dark Withimg" }
+  ],
+  "memberVariantIds": ["v_101e0f3b65cf", "v_afbce6a716f9"]
+}

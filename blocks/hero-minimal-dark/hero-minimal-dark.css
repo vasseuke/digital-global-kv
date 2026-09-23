@@ -1,0 +1,48 @@
+.hero-minimal-dark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hero-minimal-dark .hero-minimal-dark-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-minimal-dark .hero-minimal-dark-bg picture,
+.hero-minimal-dark .hero-minimal-dark-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-minimal-dark .hero-minimal-dark-content {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.hero-minimal-dark .hero-minimal-dark-content p {
+  margin: 8px 0;
+}
+
+@media (width >= 900px) {
+  .hero-minimal-dark {
+    min-height: 520px;
+  }
+
+  .hero-minimal-dark .hero-minimal-dark-content {
+    padding: 48px 40px;
+  }
+}

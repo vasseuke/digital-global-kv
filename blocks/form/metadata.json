@@ -1,0 +1,19 @@
+{
+  "variantName": "form",
+  "baseBlock": "form",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "heading + text + form fields"
+  },
+  "contentPattern": {
+    "structure": "intro rows (heading, description, links) followed by rows containing form controls such as checkboxes and text inputs"
+  },
+  "usage": "Contact / get-in-touch form with intro copy, an age-confirmation checkbox, and submit control.",
+  "options": [],
+  "memberVariantIds": ["v_be89ab9dcab3"]
+}

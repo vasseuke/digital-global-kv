@@ -1,0 +1,21 @@
+{
+  "variantName": "hero",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "medium",
+    "density": "minimal",
+    "hasBackgroundImage": true,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + image"
+  },
+  "contentPattern": {
+    "structure": "a heading over a full-width background image"
+  },
+  "usage": "Standard page hero with a heading overlaid on a background image; supports a reduced-height minimal-medium option.",
+  "options": [
+    { "class": "minimal-medium", "label": "Minimal Medium" }
+  ],
+  "memberVariantIds": []
+}

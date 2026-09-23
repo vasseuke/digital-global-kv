@@ -1,0 +1,19 @@
+{
+  "variantName": "hero-minimal-dark",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": true,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "content"
+  },
+  "contentPattern": {
+    "structure": "a background image plus a centered content card with icon, heading, meta line, and description"
+  },
+  "usage": "Recipe/detail page hero: title card overlaid on a full-bleed food photograph.",
+  "options": [],
+  "memberVariantIds": ["v_54acc159a880"]
+}

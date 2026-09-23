@@ -1,0 +1,19 @@
+{
+  "variantName": "carousel",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "medium",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "3 CTAs"
+  },
+  "contentPattern": {
+    "structure": "one row per slide; each slide has an optional image cell and a content cell with heading, text, and CTAs"
+  },
+  "usage": "Rotating slides with prev/next controls and indicators; used for promotional product highlights.",
+  "options": [],
+  "memberVariantIds": ["v_8e68390afb79"]
+}

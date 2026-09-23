@@ -1,0 +1,56 @@
+.form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form .form-intro {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form .form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form .form-field label {
+  font-weight: 700;
+}
+
+.form .form-field input,
+.form .form-field textarea,
+.form .form-field select {
+  width: 100%;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+.form .form-field-choice {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.form .form-field-choice input {
+  width: auto;
+  margin-top: 4px;
+}
+
+.form .form-submit {
+  align-self: flex-start;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+@media (width >= 600px) {
+  .form .form-fields {
+    gap: 20px;
+  }
+}

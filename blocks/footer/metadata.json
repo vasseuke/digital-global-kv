@@ -1,0 +1,19 @@
+{
+  "variantName": "footer",
+  "baseBlock": "footer",
+  "canonicalModel": "configuration",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "navigation"
+  },
+  "contentPattern": {
+    "structure": "a footer fragment reference; the block loads and decorates footer content (links, legal, social)"
+  },
+  "usage": "Site footer loaded from a footer fragment.",
+  "options": [],
+  "memberVariantIds": []
+}

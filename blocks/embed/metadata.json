@@ -1,0 +1,19 @@
+{
+  "variantName": "embed",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "content"
+  },
+  "contentPattern": {
+    "structure": "one cell containing a link to the external resource (video, social post, or embedded widget)"
+  },
+  "usage": "Embeds an external resource by URL, such as a where-to-buy product finder widget or video.",
+  "options": [],
+  "memberVariantIds": ["v_8d157b246026-1"]
+}

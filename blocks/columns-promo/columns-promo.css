@@ -1,0 +1,33 @@
+.columns-promo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-promo .columns-promo-panel {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.columns-promo .columns-promo-panel img,
+.columns-promo .columns-promo-panel picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.columns-promo .columns-promo-img-col {
+  align-items: center;
+  justify-content: center;
+}
+
+@media (width >= 900px) {
+  .columns-promo > div {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}

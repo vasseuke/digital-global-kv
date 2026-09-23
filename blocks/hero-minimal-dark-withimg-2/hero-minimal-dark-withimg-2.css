@@ -1,0 +1,45 @@
+.hero-minimal-dark-withimg-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+.hero-minimal-dark-withimg-2 .hero-minimal-dark-withimg-2-content {
+  flex: 1 1 55%;
+  text-align: center;
+}
+
+.hero-minimal-dark-withimg-2 .hero-minimal-dark-withimg-2-content h1,
+.hero-minimal-dark-withimg-2 .hero-minimal-dark-withimg-2-content h2 {
+  margin: 0 0 16px;
+}
+
+.hero-minimal-dark-withimg-2 .hero-minimal-dark-withimg-2-media {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-minimal-dark-withimg-2 .hero-minimal-dark-withimg-2-media img,
+.hero-minimal-dark-withimg-2 .hero-minimal-dark-withimg-2-media picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (width >= 900px) {
+  .hero-minimal-dark-withimg-2 {
+    flex-direction: row;
+    gap: 48px;
+    padding: 0 40px;
+    min-height: 460px;
+  }
+
+  .hero-minimal-dark-withimg-2 .hero-minimal-dark-withimg-2-content {
+    text-align: left;
+  }
+}

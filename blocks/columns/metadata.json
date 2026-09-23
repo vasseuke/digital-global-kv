@@ -1,0 +1,19 @@
+{
+  "variantName": "columns",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "large",
+    "structure": "columns"
+  },
+  "contentPattern": {
+    "structure": "a single row whose cells become side-by-side columns of text and/or images"
+  },
+  "usage": "Multi-column layout of text and image content.",
+  "options": [],
+  "memberVariantIds": []
+}

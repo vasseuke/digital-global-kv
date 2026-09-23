@@ -1,0 +1,19 @@
+{
+  "variantName": "cards",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "large",
+    "structure": "list"
+  },
+  "contentPattern": {
+    "structure": "one row per card; each card has an optional image cell and a body cell with heading and text, laid out in a responsive grid"
+  },
+  "usage": "Standard card grid with image and text cards.",
+  "options": [],
+  "memberVariantIds": []
+}

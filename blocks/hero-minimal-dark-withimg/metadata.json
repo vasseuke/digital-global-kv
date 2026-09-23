@@ -1,0 +1,22 @@
+{
+  "variantName": "hero-minimal-dark-withimg",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + CTAs + images"
+  },
+  "contentPattern": {
+    "structure": "a media cell (product imagery) and a content cell with heading, description, and call-to-action links, arranged side by side"
+  },
+  "usage": "Split product hero: creamer bottle imagery beside heading, copy, and Shop Now CTA.",
+  "options": [
+    { "class": "minimal-dark-withimg", "label": "Minimal Dark Withimg" },
+    { "class": "minimal-dark-withimg-2", "label": "Minimal Dark Withimg 2" }
+  ],
+  "memberVariantIds": ["v_daa575ea2851", "v_37ef60f2fe33", "v_daa575ea2851-1"]
+}
