@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.dunkincreamer.com/",
+  "path": "index",
+  "timestamp": "2026-09-23T08:15:52.028Z",
+  "title": "Dunkin’® Creamers",
+  "template": "hero-carousel-landing",
+  "blocks": [
+    "hero-light-withimg",
+    "carousel-recipe",
+    "columns-promo"
+  ]
+}

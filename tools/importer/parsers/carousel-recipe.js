@@ -13,19 +13,26 @@
  *     Cell 2: text content (title as heading, metadata, optional CTA)
  *
  * Source variations handled:
- *   - tiny-slider (tns) duplicates each slide multiple times (clones for the
- *     infinite loop). The static markup also nests .item elements due to
- *     unclosed tags. To avoid duplicate/mis-associated rows, iterate over the
- *     recipe anchors directly and DEDUPLICATE by normalized href.
- *   - Each recipe is an <a href> wrapping .featured-grid: <figure><img> (photo)
- *     plus <figcaption> with .recipe-title and .recipe-minute_serves spans.
- *   - Skip the decorative base64 SVG recipe-icon.
+ *   - tiny-slider (tns) duplicates each recipe as clones for the infinite loop,
+ *     so iterate the recipe anchors and DEDUPLICATE by normalized href.
+ *   - Recipe photo: the LIVE page renders it as a CSS `background-image` on the
+ *     <figure> (no <img>); the static/cached HTML uses <figure><img>. Handle
+ *     BOTH: prefer a real <img>, else build one from the figure's
+ *     background-image URL. Skip the decorative inline SVG / base64 recipe-icon.
+ *   - Title in .recipe-title; time/serves in .recipe-minute_serves <span>s.
  */
 export default function parse(element, { document }) {
   const normalize = (href) => (href || '').replace(/\/+$/, '');
 
-  // Select recipe anchors directly (each slide is an <a>). This sidesteps the
-  // malformed nested .item structure and lets us dedupe tns clones by href.
+  const bgUrl = (el) => {
+    if (!el) return null;
+    const bg = el.style && el.style.backgroundImage;
+    const src = bg || (el.getAttribute && el.getAttribute('style')) || '';
+    const m = src.match(/url\(\s*['"]?([^'")]+)['"]?\s*\)/i);
+    return m ? m[1] : null;
+  };
+
+  // Each recipe slide is an <a href>. Dedupe tns clones by href.
   const links = Array.from(element.querySelectorAll('a[href]'));
 
   const cells = [];
@@ -35,9 +42,18 @@ export default function parse(element, { document }) {
     const key = normalize(link.getAttribute('href'));
     if (!key || seen.has(key)) return;
 
-    // Real recipe photo: skip base64 SVG icons
-    const img = link.querySelector('figure img, img:not([src^="data:"])');
-    if (!img) return; // image is mandatory for a valid slide
+    // Cell 1: recipe photo. Prefer a real content <img>, else the figure bg-image.
+    let imgEl = link.querySelector('figure img, .relative img, img:not([src^="data:"])');
+    if (!imgEl) {
+      const url = bgUrl(link.querySelector('figure')) || bgUrl(link.querySelector('.relative'));
+      if (url) {
+        imgEl = document.createElement('img');
+        imgEl.setAttribute('src', url);
+        const t = link.querySelector('.recipe-title');
+        if (t && t.textContent.trim()) imgEl.setAttribute('alt', t.textContent.trim());
+      }
+    }
+    if (!imgEl) return; // image is mandatory for a valid slide
     seen.add(key);
 
     // Cell 2: text content
@@ -68,7 +84,7 @@ export default function parse(element, { document }) {
     cta.textContent = 'View Recipe';
     contentCell.push(cta);
 
-    cells.push([img, contentCell]);
+    cells.push([imgEl, contentCell]);
   });
 
   // Empty-block guard
