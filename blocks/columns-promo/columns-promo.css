@@ -43,15 +43,6 @@
   object-fit: cover;
 }
 
-/* QR image sits inside its own <p>; source 231px wide */
-.columns-promo .columns-promo-panel p:has(picture) {
-  margin: 0;
-}
-
-.columns-promo .columns-promo-panel picture img {
-  width: 231px;
-}
-
 /* Promo paragraph — source 28px, brand display font, brand text color, centered */
 .columns-promo .columns-promo-panel p {
   margin: 0;
@@ -60,6 +51,15 @@
   line-height: 1.2;
   color: var(--text-color);
   text-align: center;
+}
+
+/* QR image sits inside its own <p>; source 231px wide */
+.columns-promo .columns-promo-panel p:has(picture) {
+  margin: 0;
+}
+
+.columns-promo .columns-promo-panel picture img {
+  width: 231px;
 }
 
 /* CTA link — source renders a pink pill button (not auto-decorated to .button) */

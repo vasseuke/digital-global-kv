@@ -11,10 +11,14 @@ export default function decorate(block) {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) {
-        div.className = 'cards-recipe-card-image';
-      } else {
+      // The body cell holds the recipe title/meta (heading or text); every
+      // other cell (picture, or an empty image slot when the import lacks one)
+      // is the image cell. Classify by content so empty image cells keep the
+      // image class rather than collapsing into a second body.
+      if (div.querySelector('h1, h2, h3, h4, h5, h6') || div.textContent.trim()) {
         div.className = 'cards-recipe-card-body';
+      } else {
+        div.className = 'cards-recipe-card-image';
       }
     });
     ul.append(li);

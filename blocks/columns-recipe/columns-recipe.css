@@ -1,7 +1,22 @@
+/*
+ * columns-recipe -- recipe two-column layout.
+ * Values extracted from the source (dunkincreamer.com) computed styles + theme CSS.
+ *
+ * Two instances on the recipes page share this block:
+ *  - .columns-recipe-1-cols : the page heading (orange title + pink subheading)
+ *  - .columns-recipe-2-cols : the featured-recipe promo (image col + content card
+ *                             sitting over an orange band, pink title/CTA).
+ *
+ * Note: the featured photo is a CSS background on the source, so it is not present
+ * in the imported content -- the first (image) cell is empty. Layout is preserved
+ * so the promo reads correctly; the recipe photo would populate that cell if authored.
+ */
+
+/* ---- shared column plumbing ---- */
 .columns-recipe > div {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
 }
 
 .columns-recipe .columns-recipe-col {
@@ -10,21 +25,181 @@
 
 .columns-recipe .columns-recipe-col img,
 .columns-recipe .columns-recipe-col picture {
-  max-width: 100%;
-  height: auto;
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.columns-recipe .columns-recipe-img-col {
+/* =========================================================================
+ * 1-col variant -- page heading
+ * ========================================================================= */
+.columns-recipe-1-cols {
+  text-align: center;
+}
+
+.columns-recipe-1-cols h1 {
+  margin: 0 0 24px;
+  color: var(--brand-orange);
+  font-size: 40px;
+  line-height: 1;
+  text-align: center;
+}
+
+.columns-recipe-1-cols p {
+  margin: 0 0 32px;
+  color: var(--brand-pink);
+  font-family: var(--heading-font-family);
+  font-size: 30px;
+  line-height: 1.22;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* =========================================================================
+ * 2-col variant -- featured recipe promo
+ * ========================================================================= */
+.columns-recipe-2-cols {
+  position: relative;
+  background-color: var(--background-color);
+}
+
+/* image column (first cell) -- holds the recipe photo when authored */
+.columns-recipe-2-cols .columns-recipe-col:first-child {
+  min-height: 220px;
+  background-color: var(--brand-grey);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* content card (second cell) */
+.columns-recipe-2-cols .columns-recipe-col:last-child {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 30px 16px 40px;
+  text-align: center;
 }
 
+/* the orange band behind the lower part of the card */
+.columns-recipe-2-cols .columns-recipe-col:last-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  background-color: var(--brand-orange);
+  z-index: 0;
+}
+
+/* keep card content above the orange band, capped to the source card width */
+.columns-recipe-2-cols .columns-recipe-col:last-child > * {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* title */
+.columns-recipe-2-cols .columns-recipe-col:last-child > p:nth-child(1) {
+  margin: 0 0 8px;
+  color: var(--brand-pink);
+  font-family: var(--heading-font-family);
+  font-size: 34px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* meta (time / serves) */
+.columns-recipe-2-cols .columns-recipe-col:last-child > p:nth-child(2) {
+  margin: 0 0 16px;
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* description */
+.columns-recipe-2-cols .columns-recipe-col:last-child > p:nth-child(3) {
+  margin: 0 0 32px;
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* CTA -- white pill with pink label (source overrides the global pink button) */
+.columns-recipe-2-cols .columns-recipe-col:last-child > p:last-child {
+  margin: 0;
+}
+
+.columns-recipe-2-cols .columns-recipe-col:last-child a:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  height: 46px;
+  padding: 0 40px;
+  border: none;
+  border-radius: 40px;
+  background-color: #fff;
+  color: var(--brand-pink);
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.columns-recipe-2-cols .columns-recipe-col:last-child a:hover,
+.columns-recipe-2-cols .columns-recipe-col:last-child a:focus-visible {
+  background-color: var(--brand-pink);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* =========================================================================
+ * Desktop
+ * ========================================================================= */
 @media (width >= 900px) {
-  .columns-recipe > div {
+  .columns-recipe-1-cols h1 {
+    font-size: 68px;
+    margin-bottom: 24px;
+  }
+
+  .columns-recipe-1-cols p {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 60px;
+  }
+
+  .columns-recipe-2-cols {
+    padding: 60px 0 54px;
+  }
+
+  .columns-recipe-2-cols > div {
     flex-direction: row;
-    align-items: flex-start;
-    gap: 48px;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .columns-recipe-2-cols .columns-recipe-col:first-child {
+    flex: 0 0 60%;
+    min-height: 479px;
+  }
+
+  .columns-recipe-2-cols .columns-recipe-col:last-child {
+    flex: 1 1 0;
+    min-height: 479px;
+    padding: 30px 0 10px;
+  }
+
+  .columns-recipe-2-cols .columns-recipe-col:last-child::after {
+    height: 215px;
   }
 }

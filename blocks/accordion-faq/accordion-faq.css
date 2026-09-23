@@ -1,41 +1,106 @@
+/*
+ * Accordion — FAQ variant.
+ * Design migrated from dunkincreamer.com .expander (FAQ accordion).
+ * Structure (post-decorate):
+ *   .accordion-faq
+ *     details.accordion-faq-item
+ *       summary.accordion-faq-item-label  (contains the question h3)
+ *       div.accordion-faq-item-body       (answer content)
+ * Source: question + answer text share size/line-height; question is pink
+ * ExtraBold; a chevron toggle sits at the right, rows separated by whitespace.
+ */
+
+.accordion-faq {
+  width: 100%;
+}
+
+/* --- Each FAQ item: separated by whitespace, no border (matches source) --- */
 .accordion-faq .accordion-faq-item {
-  border-bottom: 1px solid #dadada;
+  position: relative;
+  margin-bottom: 24px;
 }
 
-.accordion-faq .accordion-faq-item p {
-  margin-bottom: 0.8em;
+.accordion-faq .accordion-faq-item:last-of-type {
+  margin-bottom: 0;
 }
 
+/* --- Question row (summary) --- */
 .accordion-faq .accordion-faq-item-label {
   position: relative;
-  padding: 16px 46px 16px 0;
+  padding: 0 40px 0 0;
   cursor: pointer;
   list-style: none;
-  font-weight: 700;
-  transition: color 0.2s;
 }
 
 .accordion-faq .accordion-faq-item-label::-webkit-details-marker {
   display: none;
 }
 
+/* question text — pink, ExtraBold, matches source .expander__headline-heading */
+.accordion-faq .accordion-faq-item-label h3 {
+  margin: 0;
+  color: var(--link-color);
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+/* --- Chevron toggle at the right (points down closed, up open) --- */
 .accordion-faq .accordion-faq-item-label::after {
   content: '';
   position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%) rotate(135deg);
-  width: 8px;
-  height: 8px;
-  border: 2px solid;
-  border-width: 2px 2px 0 0;
-  transition: transform 0.2s;
+  top: 0.75em;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  border: solid var(--link-color);
+  border-width: 0 2px 2px 0;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s ease-in-out;
 }
 
 .accordion-faq .accordion-faq-item[open] .accordion-faq-item-label::after {
-  transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-135deg);
 }
 
+/* --- Answer body --- */
 .accordion-faq .accordion-faq-item-body {
-  padding: 0 0 16px;
+  padding: 5px 30px 10px 0;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.accordion-faq .accordion-faq-item-body p {
+  margin: 0 0 0.625rem;
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.accordion-faq .accordion-faq-item-body p:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-faq .accordion-faq-item-body a {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+/* --- Desktop --- */
+@media (width >= 900px) {
+  .accordion-faq .accordion-faq-item {
+    margin-bottom: 30px;
+  }
+
+  .accordion-faq .accordion-faq-item-label h3 {
+    font-size: 24px;
+    line-height: 1.58;
+  }
+
+  .accordion-faq .accordion-faq-item-body,
+  .accordion-faq .accordion-faq-item-body p {
+    font-size: 24px;
+    line-height: 1.58;
+  }
 }

@@ -1,56 +1,158 @@
+/*
+ * Form Block
+ * Visual design migrated from dunkincreamer.com/contact-us.
+ * Values sourced from source computed styles; colors/fonts mapped to brand vars.
+ */
+
 .form {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.form .form-intro {
-  text-align: center;
+/* --- Intro: centered "GET IN TOUCH" heading (orange) + intro copy --- */
+.form-intro {
   margin-bottom: 24px;
 }
 
-.form .form-fields {
+/* Block title */
+.form h2 {
+  color: var(--brand-orange);
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.form-intro p {
+  color: var(--text-color);
+}
+
+/* First intro group (title + lead paragraphs) is centered */
+.form-intro > div:first-child {
+  text-align: center;
+}
+
+.form-intro > div:first-child p {
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--text-color);
+  margin: 0.25em 0;
+}
+
+/* --- Section questions (h3) --- */
+.form h3 {
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: var(--heading-font-size-l);
+  line-height: 1.33;
+  text-transform: none;
+  margin-top: 1em;
+  margin-bottom: 9px;
+}
+
+/* --- Form controls (structural classes; styled for when authored) --- */
+.form-fields {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.form .form-field {
+.form-field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
-.form .form-field label {
-  font-weight: 700;
+.form-field label {
+  color: var(--brand-pink);
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
 
-.form .form-field input,
-.form .form-field textarea,
-.form .form-field select {
+.form-field input,
+.form-field textarea,
+.form-field select {
   width: 100%;
-  padding: 10px 12px;
   box-sizing: border-box;
+  font-size: 18px;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  border-radius: 12px;
+  padding: 0 15px;
+  height: 56px;
+  background-color: #fff;
 }
 
-.form .form-field-choice {
+.form-field select {
+  background-color: var(--brand-grey);
+}
+
+.form-field textarea {
+  height: auto;
+  min-height: 160px;
+  padding: 12px 15px;
+}
+
+/* checkbox / radio rows */
+.form-field-choice {
   flex-direction: row;
   align-items: flex-start;
   gap: 10px;
 }
 
-.form .form-field-choice input {
-  width: auto;
+.form-field-choice input {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
   margin-top: 4px;
 }
 
-.form .form-submit {
+.form-field-choice label {
+  font-size: 18px;
+}
+
+/* --- Submit: pink pill button --- */
+.form-submit,
+.form input[type="submit"] {
   align-self: flex-start;
-  padding: 12px 24px;
+  background-color: var(--brand-pink);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 0;
+  border-radius: 40px;
+  padding: 14px 40px;
   cursor: pointer;
 }
 
-@media (width >= 600px) {
-  .form .form-fields {
+.form-submit:hover,
+.form input[type="submit"]:hover {
+  background-color: var(--link-hover-color);
+}
+
+/* --- Desktop --- */
+@media (width >= 900px) {
+  .form h2 {
+    font-size: 68px;
+    line-height: 1.1;
+  }
+
+  .form-intro > div:first-child p {
+    font-size: 24px;
+  }
+
+  .form-fields {
     gap: 20px;
   }
 }

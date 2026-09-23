@@ -14,7 +14,7 @@
 
 :root {
   /* colors (brand values sourced from brand.css) */
-  --background-color: #ffffff;
+  --background-color: #fff;
   --light-color: #f2f2f2;
   --dark-color: #c63663;
   --text-color: #3e342f;
@@ -188,8 +188,8 @@ button.button:disabled {
 
 a.button.primary,
 button.button.primary,
-a.button:any-link:not(.secondary):not(.accent),
-button.button:not(.secondary):not(.accent) {
+a.button:any-link:not(.secondary, .accent),
+button.button:not(.secondary, .accent) {
   border-color: var(--brand-pink);
   background-color: var(--brand-pink);
   color: #fff;
@@ -200,8 +200,8 @@ a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible,
-a.button:any-link:not(.secondary):not(.accent):hover,
-button.button:not(.secondary):not(.accent):hover {
+a.button:any-link:not(.secondary, .accent):hover,
+button.button:not(.secondary, .accent):hover {
   border-color: var(--link-hover-color);
   background-color: var(--link-hover-color);
   color: #fff;

@@ -15,6 +15,13 @@ export default function decorate(block) {
         div.className = 'cards-product-card-image';
       } else {
         div.className = 'cards-product-card-body';
+        // Ensure the Shop Now link renders as the pink pill button even if
+        // EDS auto-button decoration did not tag it.
+        const cta = div.querySelector('p:last-child > a:only-child');
+        if (cta && !cta.classList.contains('button')) {
+          cta.classList.add('button');
+          cta.parentElement.classList.add('button-container');
+        }
       }
     });
     ul.append(li);

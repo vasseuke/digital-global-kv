@@ -1,27 +1,116 @@
+/* Block: cards (Dunkin "discover flavors" product grid) */
+
+/* Values extracted from source: dunkincreamer.com .discoverflavors / .find-products */
+
 .cards > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
 }
 
+/* card item -- no border/background/shadow on source; plain centered column */
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  border: none;
+  background-color: transparent;
+  margin: 0 1% 2%;
+  width: 46%;
+  max-width: 17.5rem; /* 280px */
+  text-align: center;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
-}
-
+/* product image -- tall bottle shot, shown at natural aspect (NOT cropped) */
 .cards .cards-card-image {
+  width: 80%;
+  margin: 0 auto;
   line-height: 0;
 }
 
-.cards > ul > li img {
+.cards .cards-card-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: auto;
+}
+
+/* text area under the image */
+.cards .cards-card-body {
+  padding: 0.625rem 0; /* 10px */
+  max-width: 94%;
+  margin: 0 auto;
+}
+
+/* size label (e.g. "32oz & 48oz") */
+.cards .cards-card-body p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 0.875rem; /* 14px */
+  color: var(--text-color);
+}
+
+/* product name */
+.cards .cards-card-body h3 {
+  margin: 0.15em 0 0;
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--brand-pink); /* mobile: pink; desktop overrides to dark below */
+}
+
+/* "IT'S BACK!" style highlight inside a name renders orange on source */
+.cards .cards-card-body h3 sup {
+  font-size: 0.6em;
+}
+
+/* SHOP NOW pill (source markup does not carry .button, so target the raw link too) */
+.cards .cards-card-body p:last-child {
+  margin: 1rem 0 0;
+}
+
+.cards .cards-card-body a,
+main .cards .cards-card-body a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8.05rem; /* 128.8px */
+  height: 2.875rem; /* 46px */
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: 2.5rem; /* 40px pill */
+  background-color: var(--brand-pink);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 1rem; /* 16px */
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.cards .cards-card-body a:hover,
+main .cards .cards-card-body a.button:any-link:hover {
+  background-color: var(--text-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .cards > ul > li {
+    /* desktop: narrow centered columns like the source 18% grid */
+    width: 18%;
+    margin: 0 1%;
+  }
+
+  .cards .cards-card-body {
+    max-width: 84%;
+  }
+
+  .cards .cards-card-body h3 {
+    color: var(--text-color);
+  }
 }

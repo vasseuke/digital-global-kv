@@ -1,48 +1,131 @@
-.hero-minimal-dark {
+/* Hero — minimal dark (recipe detail).
+ * Values extracted from source (dunkincreamer.com recipeteaser). Mobile-first. */
+
+.hero-minimal-dark.block {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 420px;
-  padding: 40px 24px;
+  width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
+/* --- Background photograph (full-bleed) --- */
 .hero-minimal-dark .hero-minimal-dark-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  width: 100%;
+  height: 390px; /* 24.375rem, mobile */
+  background-color: var(--light-color);
 }
 
 .hero-minimal-dark .hero-minimal-dark-bg picture,
 .hero-minimal-dark .hero-minimal-dark-bg img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: 50% 50%;
 }
 
+/* --- White content card --- */
 .hero-minimal-dark .hero-minimal-dark-content {
   position: relative;
   z-index: 1;
-  max-width: 960px;
+  box-sizing: border-box;
   width: 100%;
+  max-width: 978px; /* 61.125rem */
   margin: 0 auto;
-  padding: 32px 24px;
+  padding: 48px 30px 64px; /* 3rem 1.875rem 4rem */
+  background-color: #fff;
+  box-shadow: 25px 25px 99px rgb(0 0 0 / 16%);
   text-align: center;
 }
 
-.hero-minimal-dark .hero-minimal-dark-content p {
-  margin: 8px 0;
+/* --- Whisk brand icon (overlaps top edge of card) --- */
+.hero-minimal-dark .hero-minimal-dark-icon {
+  display: block;
+  margin: -65px auto 10px; /* -4.0625rem / .625rem, mobile */
 }
 
+.hero-minimal-dark .hero-minimal-dark-icon img {
+  display: block;
+  width: 122px; /* 7.625rem, mobile */
+  height: 123px; /* 7.6875rem, mobile */
+  margin: 0 auto;
+}
+
+/* --- Title --- */
+.hero-minimal-dark .hero-minimal-dark-content h1,
+.hero-minimal-dark .hero-minimal-dark-content h2,
+.hero-minimal-dark .hero-minimal-dark-content h3 {
+  margin: 0 0 20px; /* 1.25rem */
+  color: var(--brand-pink);
+  font-weight: 800;
+  font-size: 48px; /* 3rem, mobile */
+  line-height: 50px; /* 3.125rem */
+  text-transform: uppercase;
+}
+
+/* --- Meta line (time / serves) --- */
+.hero-minimal-dark .hero-minimal-dark-meta {
+  margin: 10px 0; /* .625rem 0 */
+  color: var(--text-color);
+  font-size: 16px; /* 1rem */
+  line-height: 1;
+}
+
+.hero-minimal-dark .hero-minimal-dark-meta span:nth-child(2)::before {
+  content: "|";
+  margin: 0 0.5rem;
+}
+
+/* --- Description --- */
+.hero-minimal-dark .hero-minimal-dark-content p {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 20px; /* 1.25rem */
+  line-height: 24px; /* 1.5rem */
+}
+
+.hero-minimal-dark .hero-minimal-dark-meta + p {
+  margin-top: 0.625rem;
+}
+
+/* --- Desktop: card overlaps a taller background photo --- */
 @media (width >= 900px) {
-  .hero-minimal-dark {
-    min-height: 520px;
+  .hero-minimal-dark .hero-minimal-dark-bg {
+    height: 550px; /* 34.375rem */
   }
 
   .hero-minimal-dark .hero-minimal-dark-content {
-    padding: 48px 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 140px; /* 8.75rem */
+    padding: 48px 48px 64px; /* 3rem 3rem 4rem */
+  }
+
+  .hero-minimal-dark .hero-minimal-dark-icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -52px; /* -3.25rem */
+    margin: 0 auto;
+  }
+
+  .hero-minimal-dark .hero-minimal-dark-icon img {
+    width: 104px; /* 6.5rem */
+    height: 104px;
+  }
+
+  .hero-minimal-dark .hero-minimal-dark-content h1,
+  .hero-minimal-dark .hero-minimal-dark-content h2,
+  .hero-minimal-dark .hero-minimal-dark-content h3 {
+    margin: 0;
+    font-size: 55px; /* 3.4375rem */
+    line-height: 1;
+  }
+
+  .hero-minimal-dark .hero-minimal-dark-content p {
+    padding: 0 128px; /* 0 8rem */
   }
 }
